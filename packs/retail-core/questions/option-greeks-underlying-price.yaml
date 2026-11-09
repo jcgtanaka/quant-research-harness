@@ -1,0 +1,24 @@
+id: option-greeks-underlying-price
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: Which underlying price were the implied volatilities and Greeks computed from?
+why_it_matters: A model value computed from a price stamped later than the option quote mixes two points in time.
+answer_type: choice
+choices:
+- id: synchronous_mid
+  label: The underlying mid at the option quote time
+- id: synchronous_last
+  label: The underlying last trade at the option quote time
+- id: close
+  label: The underlying close of the day or bar
+- id: settlement
+  label: The underlying settlement price, known after the close
+  risk: lookahead
+- id: unknown_source
+  label: The vendor does not say
+critical: true
+unknown_risk: The underlying price behind the model values may postdate the option quote (possible look-ahead).

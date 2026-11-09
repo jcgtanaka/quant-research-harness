@@ -1,0 +1,15 @@
+id: timestamp-semantics
+stage: S1
+scope: dataset
+applies_to: {}
+text: Do the timestamps in this data mark the bar open or the bar close?
+why_it_matters: If a row is stamped at the open but holds the close, using it at that time reads the future.
+answer_type: choice
+choices:
+- id: bar_close
+  label: The bar close (the row is known at its timestamp)
+- id: bar_open
+  label: The bar open (the row holds values only known later)
+  risk: lookahead
+critical: true
+unknown_risk: Bar timing is unverified; a one-bar look-ahead cannot be ruled out.

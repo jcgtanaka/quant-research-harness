@@ -1,0 +1,23 @@
+id: option-greeks-origin
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: Were the implied volatilities and Greeks in this data computed by you or supplied by the vendor?
+why_it_matters: Vendor values rest on undisclosed inputs (rates, yields, timing, model) that may not have been known
+  at the time.
+answer_type: choice
+choices:
+- id: own_computed
+  label: Computed by me from the quotes, with inputs I control
+- id: vendor_documented
+  label: Vendor-supplied, method documented
+- id: vendor_undocumented
+  label: Vendor-supplied, method not documented
+  risk: lookahead
+- id: mixed
+  label: Some columns are mine and some are the vendor's
+critical: true
+unknown_risk: The inputs behind the implied volatilities and Greeks are unverified (possible look-ahead).

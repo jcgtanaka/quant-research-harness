@@ -1,0 +1,10 @@
+id: count-every-prompt-model-variant
+statement: Count every prompt, model and feature variant as a trial, including the ones tried by hand or outside the
+  harness. Editing a prompt or swapping a model is another trial; the family count and the overfitting statistics must
+  grow with it.
+applies_to:
+  uses_llm: true
+trigger:
+  keywords: []
+action: warn
+severity: warning

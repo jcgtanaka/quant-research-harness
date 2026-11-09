@@ -1,0 +1,22 @@
+id: crypto-fee-tier
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - crypto
+  - crypto_spot
+  - crypto_perp
+text: Which fee tier is assumed in the backtest?
+why_it_matters: A fee tier you cannot actually reach, or ignoring maker and taker differences, overstates net returns.
+answer_type: choice
+choices:
+- id: my_actual_tier
+  label: The tier my account has today
+- id: top_tier
+  label: The best published tier
+- id: flat_assumption
+  label: One flat assumed rate
+- id: no_fees
+  label: No fees
+critical: false
+unknown_risk: The fee tier is unverified; net returns may be overstated.

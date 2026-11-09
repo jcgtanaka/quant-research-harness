@@ -1,0 +1,23 @@
+id: crypto-perp-funding
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - crypto
+  - crypto_spot
+  - crypto_perp
+text: For perpetual contracts, are funding payments included in the returns?
+why_it_matters: Funding can be a large, steady cost or income; leaving it out misstates the return of any holding
+  strategy.
+answer_type: choice
+choices:
+- id: included
+  label: Yes, funding is included
+- id: price_only
+  label: No, price changes only
+- id: not_perpetual
+  label: Not applicable, not a perpetual
+- id: unknown_funding
+  label: I do not know
+critical: false
+unknown_risk: Whether funding is in the return is unverified.

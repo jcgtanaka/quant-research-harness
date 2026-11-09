@@ -1,0 +1,14 @@
+rules:
+  - type: schema
+    columns: {reference: f, derived: f}
+  - type: range
+    column: reference
+    positive: true
+  - type: relationship
+    column: derived
+    reference: reference
+    rel_tol: 0.02
+  - type: gaps
+    freq: D
+  - type: timezone
+    zone: UTC

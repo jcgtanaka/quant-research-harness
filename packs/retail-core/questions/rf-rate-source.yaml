@@ -1,0 +1,22 @@
+id: rf-rate-source
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: How were the risk-free rates in this options data produced?
+why_it_matters: A rate curve that was not known at the time leaks the future into option prices and Greeks.
+answer_type: choice
+choices:
+- id: pit_daily
+  label: Point-in-time daily published rates
+- id: single_constant
+  label: A single constant rate
+- id: current_curve
+  label: The current curve applied to all of history
+  risk: lookahead
+- id: vendor
+  label: Vendor-supplied series
+critical: true
+unknown_risk: The rate input may contain information from after the bar it prices (possible look-ahead).

@@ -1,0 +1,21 @@
+id: bar-type-declared
+stage: S1
+scope: dataset
+applies_to: {}
+text: What kind of bars is this data made of?
+why_it_matters: Time, dollar and volume bars age differently; age and timing checks assume a known bar length.
+answer_type: choice
+choices:
+- id: time
+  label: Time bars (a fixed clock period such as 1 hour or 1 day)
+- id: dollar
+  label: Dollar bars (a fixed amount of money traded per bar)
+- id: volume
+  label: Volume bars (a fixed number of shares or contracts traded per bar)
+- id: mixed
+  label: Mixed (more than one kind)
+- id: unknown
+  label: I do not know
+  risk: bar-type-unknown
+critical: true
+unknown_risk: The bar length is unverified, so age and timing checks cannot be trusted.

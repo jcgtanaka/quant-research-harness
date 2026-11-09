@@ -1,0 +1,13 @@
+id: demo-trend-warning
+statement: Trend rules tuned on a single synthetic path can look better than they are; compare against
+  a shuffled control.
+applies_to:
+  strategy_family:
+  - trend
+trigger:
+  keywords:
+  - moving
+  - trend
+  - crossover
+action: warn
+severity: info

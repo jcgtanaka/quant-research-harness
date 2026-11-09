@@ -1,0 +1,10 @@
+id: llm-cutoff-source
+stage: S2
+scope: hypothesis
+applies_to:
+  uses_llm: true
+text: How was the training cutoff of each declared model determined (the provider documents it, you estimated it, or it is not known)?
+why_it_matters: The cutoff gate compares the test windows with a date. A date nobody can source may be too early, and then the windows overlap what the model was trained on.
+answer_type: text
+critical: true
+unknown_risk: The cutoff is unsourced, so the evaluation windows may overlap the model's training data.

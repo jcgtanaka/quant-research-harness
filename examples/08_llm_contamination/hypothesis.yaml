@@ -1,0 +1,29 @@
+# Synthetic example: the declared model was trained on data up to 2021-06-30 but the development window starts in
+# 2020. Expected: S2 FAIL from the cutoff gate (the leak is in the model weights; truncation cannot see it).
+text: A language model asked for the direction of the next bar from recent closes follows the trend on a synthetic series.
+strategy_family: llm-oracle
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 3
+thresholds:
+  min_deflated_score: 0.5
+  max_drawdown: 0.25
+difference_statement: Language-model trend rule whose model was trained on the test period.
+adapter: "adapter:LLMOracleAdapter"
+datasets: [prices]
+windows:
+  development: ["2020-03-01", "2023-12-31"]
+walk_forward: {train: 400, test: 100}
+bounds:
+  max_abs_period_return: 0.5
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0
+llm:
+  models:
+    - id: stub-model-2
+      provider: stub
+      training_cutoff: "2021-06-30"
+      cutoff_source: provider_documented
+  prompt_files: [prompts/trend.txt]
+  params: {temperature: 0}
+  live_retrieval: false

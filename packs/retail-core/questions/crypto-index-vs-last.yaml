@@ -1,0 +1,22 @@
+id: crypto-index-vs-last
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - crypto
+  - crypto_spot
+  - crypto_perp
+text: Is the price the last traded price or an index or mark price?
+why_it_matters: A mark or index price is smoothed and may not be a price at which a trade was possible.
+answer_type: choice
+choices:
+- id: last_trade
+  label: Last traded price
+- id: mark
+  label: Mark price
+- id: index
+  label: Index price
+- id: unknown_price
+  label: I do not know
+critical: false
+unknown_risk: The price definition is unverified; fills may be unrealistic.

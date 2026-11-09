@@ -1,0 +1,23 @@
+id: fx-quote-side
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - fx
+  - fx_spot
+text: Do the prices hold the bid, the ask or the mid?
+why_it_matters: Treating a mid as a fill price understates the spread cost on every trade.
+answer_type: choice
+choices:
+- id: bid_and_ask
+  label: Both bid and ask are present
+- id: mid
+  label: Mid only
+- id: bid_only
+  label: Bid only
+- id: ask_only
+  label: Ask only
+- id: unknown_side
+  label: The vendor does not say
+critical: false
+unknown_risk: The quote side is unverified; costs may be understated.

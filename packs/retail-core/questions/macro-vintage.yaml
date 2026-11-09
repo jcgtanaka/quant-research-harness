@@ -1,0 +1,17 @@
+id: macro-vintage
+stage: S1
+scope: dataset
+applies_to:
+  strategy_family:
+  - macro
+text: Is the macro data the first release or the revised history?
+why_it_matters: Revised values were not known when the decision was made.
+answer_type: choice
+choices:
+- id: first_release
+  label: First release as published at the time
+- id: revised
+  label: Revised history
+  risk: lookahead
+critical: true
+unknown_risk: Revision look-ahead cannot be ruled out.

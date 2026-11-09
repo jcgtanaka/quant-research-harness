@@ -1,0 +1,20 @@
+id: data-history-revised
+stage: S1
+scope: dataset
+applies_to: {}
+text: Was this history ever revised or backfilled after it was first published?
+why_it_matters: Revised or backfilled values were not available at the time, so decisions based on them read the
+  future.
+answer_type: choice
+choices:
+- id: never_revised
+  label: No, it is as first published
+- id: append_only_snapshots
+  label: Revised, but I keep snapshots as first published
+- id: revised_or_backfilled
+  label: Yes, revised or backfilled and I only have the latest version
+  risk: lookahead
+- id: unknown_revision
+  label: I do not know
+critical: true
+unknown_risk: Revision or backfill look-ahead cannot be ruled out.

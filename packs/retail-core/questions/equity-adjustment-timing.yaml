@@ -1,0 +1,26 @@
+id: equity-adjustment-timing
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - equity
+  - equities
+  - etf
+text: When were the split and dividend adjustments to the prices applied?
+why_it_matters: Prices adjusted with today's factors differ from what was observable then; unadjusted prices show
+  false jumps.
+answer_type: choice
+choices:
+- id: unadjusted
+  label: 'Not adjusted: raw prices as traded'
+- id: adjusted_as_of_each_date
+  label: Adjusted only for events known at each date
+- id: adjusted_as_of_today
+  label: Adjusted with today's factors for the whole history
+  risk: lookahead
+- id: split_only
+  label: Splits adjusted, dividends not
+- id: unknown_adjustment
+  label: The vendor does not say
+critical: true
+unknown_risk: The adjustment basis is unverified; false jumps or look-ahead through the factors are possible.

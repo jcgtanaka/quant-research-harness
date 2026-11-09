@@ -1,0 +1,8 @@
+text: A synthetic breakout rule with a volatility filter.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+variants_tried: 2
+verdict: INCONCLUSIVE
+date: ''
+notes: Synthetic entry for demonstration.

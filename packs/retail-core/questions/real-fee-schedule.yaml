@@ -1,0 +1,9 @@
+id: real-fee-schedule
+stage: S6
+scope: account
+applies_to: {}
+text: What is your real fee schedule per order or per share?
+why_it_matters: Cost stress is only meaningful against the costs you will actually pay.
+answer_type: text
+critical: false
+unknown_risk: Costs may not match the account.

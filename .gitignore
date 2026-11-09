@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+.venv/
+
+# Local state and secrets
+.qrh/
+.claude/
+.codegraph/
+.ruff_cache/
+.env*
+denylist*
+!scripts/denylist_check.py
+
+# Data files (allowed only under tests/fixtures/)
+*.csv
+*.parquet
+*.pkl
+*.feather
+*.zip
+!tests/fixtures/**

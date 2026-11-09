@@ -1,0 +1,19 @@
+# Synthetic example: a 120-combination grid searched on pure noise. Expected: S1-S3 PASS, then FAIL at S5
+# (PBO above max_pbo); S4 can also fail by chance, since out-of-sample noise is zero-mean.
+text: A fast/slow moving-average spread with a dead band predicts the next bar on a synthetic series.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 120
+thresholds:
+  max_pbo: 0.2  # the rest come from the defaults
+difference_statement: Large parameter grid on a series with no structure (deliberately overfit-prone).
+adapter: "adapter:NoiseGridAdapter"
+datasets: [prices]
+windows:
+  development: ["2020-03-01", "2023-12-31"]
+walk_forward: {train: 400, test: 100}
+bounds:
+  max_abs_period_return: 0.5
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0

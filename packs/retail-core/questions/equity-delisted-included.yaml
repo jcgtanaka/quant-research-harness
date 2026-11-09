@@ -1,0 +1,23 @@
+id: equity-delisted-included
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - equity
+  - equities
+  - etf
+text: Does the data include names that were later delisted, merged or went bankrupt?
+why_it_matters: Without delisted names, the worst outcomes are missing and returns are overstated.
+answer_type: choice
+choices:
+- id: included_with_delisting_returns
+  label: Yes, with their final returns
+- id: included_without_delisting_returns
+  label: Yes, but without the final return
+- id: excluded
+  label: No, only names listed today
+  risk: survivorship
+- id: unknown_delisted
+  label: I do not know
+critical: true
+unknown_risk: Survivorship through missing delisted names is unverified.

@@ -1,0 +1,17 @@
+id: time-bar-label-confirmed
+stage: S1
+scope: dataset
+applies_to: {}
+text: If this data is time bars, do the bars really cover the period in the label (for example, a file named 1-hour contains
+  1-hour bars)?
+why_it_matters: A wrong label means every age and timing check uses the wrong bar length.
+answer_type: choice
+choices:
+- id: yes_checked
+  label: Yes, I checked a sample
+- id: not_checked
+  label: No, I did not check
+- id: not_time_bars
+  label: The data is not time bars
+critical: false
+unknown_risk: The stated bar length is unverified.

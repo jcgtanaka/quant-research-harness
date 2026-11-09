@@ -1,0 +1,14 @@
+id: variants-outside-harness
+stage: S3
+scope: strategy
+applies_to: {}
+text: >-
+  How many variants of this idea did you try outside the harness (models, prompts, features, parameters)? For a strategy
+  that uses a language model this includes the prompt and model variants. How many other prompt or model variants did
+  you try for this idea outside the harness?
+why_it_matters: Every untracked variant is a hidden trial; the overfitting statistics must count them.
+answer_type: number
+critical: true
+maps_to:
+  kind: imported_trials
+unknown_risk: Hidden trials are not counted, so the deflated statistics may be too kind.

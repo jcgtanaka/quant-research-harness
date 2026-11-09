@@ -1,0 +1,13 @@
+id: base-rate-check
+statement: Before trusting the precision of a stress or regime detector, compute the base rate of the
+  event it flags. A detector that fires rarely can look precise and still add nothing over the base rate.
+applies_to: {}
+trigger:
+  keywords:
+  - regime
+  - stress
+  - detector
+  - crisis
+  - volatility regime
+action: warn
+severity: warning

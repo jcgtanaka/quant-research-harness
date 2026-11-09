@@ -1,0 +1,18 @@
+id: data-source-declared
+stage: S1
+scope: dataset
+applies_to: {}
+text: Where did this data come from?
+why_it_matters: Each kind of source stamps and publishes its rows differently, which affects when a row was really known.
+answer_type: choice
+choices:
+- id: broker_export
+  label: Exported from my broker's platform
+- id: data_vendor
+  label: A paid or free data provider
+- id: own_file
+  label: Built by me from another source
+- id: unknown
+  label: I do not know
+critical: false
+unknown_risk: The source's timestamping and publication timing are unverified.

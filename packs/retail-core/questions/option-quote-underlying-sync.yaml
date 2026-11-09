@@ -1,0 +1,23 @@
+id: option-quote-underlying-sync
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: Are the option prices and the underlying prices timestamped together?
+why_it_matters: If the underlying is stamped later than the options, a signal can use information the option market
+  did not yet have.
+answer_type: choice
+choices:
+- id: same_timestamp
+  label: Same timestamp from one snapshot
+- id: underlying_earlier
+  label: The underlying is stamped earlier than the options
+- id: underlying_later
+  label: The underlying is stamped later than the options
+  risk: lookahead
+- id: different_sources
+  label: Different sources with unrelated clocks
+critical: true
+unknown_risk: Time alignment between the option and underlying series is unverified (possible look-ahead).

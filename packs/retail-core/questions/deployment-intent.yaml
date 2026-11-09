@@ -1,0 +1,18 @@
+id: deployment-intent
+stage: S7
+scope: hypothesis
+applies_to: {}
+text: What is the intended use of this result?
+why_it_matters: The bar for evidence is higher before real money is involved.
+answer_type: choice
+choices:
+- id: research
+  label: Research only
+- id: paper
+  label: Paper trading
+- id: live_small
+  label: Small live account
+- id: live
+  label: Live account
+critical: false
+unknown_risk: Intended use is unstated.

@@ -1,0 +1,46 @@
+quant-research-harness
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The AI usage metrics (src/qrh/usage/, docs/usage.md) follow a design by Yoichi Palacios Tanaka,
+published as claude-kit (https://github.com/IchiSieben/claude-kit, Apache License 2.0):
+harvesting Claude Code transcripts into per-session metrics, counting each message id once,
+taking cost from the harness cost-state, the cache and context measures, and the idea of
+deterministic "plays" that name their rule and numbers.
+
+No source code from claude-kit is included; the implementation here was written independently
+for this project's own data model, thresholds files and reports.
+
+Human approval tokens (src/qrh/approvals.py, src/qrh/hooks/approval_guard.py, docs/hooks.md "Approvals") adapt the
+design of agent-guardrail by Jose Carlos Gonzales Tanaka (MIT, https://github.com/jcgtanaka/agent-guardrail): out-of-band
+pending requests, HMAC-signed single-use tokens, and the rule that the agent must not be able to approve itself.
+
+The runaway guard (src/qrh/hooks/runaway.py), the claim check and weakened-test audit (src/qrh/hooks/claim_check.py,
+src/qrh/checks/weakened_tests.py), the waste report (src/qrh/usage/waste.py) and the regression finder
+(src/qrh/usage/regress.py) follow the ideas of the claim-check, runaway-guard, session-waste-report and regression-finder
+skills by Ryan Alberts (MIT, https://github.com/RyanAlberts/best-of-Agent-Harnesses, skills folder only):
+loop, failure-streak and spend trip wires; checking "tests pass" claims against the transcript and the weakened-test
+signals (deleted tests, removed assertions, new skips); the waste categories (re-reads, oversized results, cache
+rebuilds, failing loops, compactions); and before/after comparison per turn with Mann-Whitney U and Fisher exact tests.
+The code, thresholds, data model and report text here were written independently; no source file was copied, and the
+catalog text of that repository (CC BY-SA) was not used.
+
+Third-party dependencies
+
+The harness needs the runtime packages below. None is copied into this repository; they are installed
+separately. Versions and licences were read from the installed package metadata of the project environment.
+All are permissive and compatible with Apache-2.0. No GPL or other copyleft licence was found.
+
+- pandas 3.1.0: BSD-3-Clause. Permissive, compatible.
+- numpy 2.5.4: BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 (the last four cover bundled parts). All permissive, compatible.
+- typer 0.27.3: MIT. Permissive, compatible.
+- pydantic 2.14.1: MIT. Permissive, compatible.
+- pyyaml 6.0.3: MIT. Permissive, compatible.
+- pyarrow 26.0.0: Apache-2.0. Same licence as this project, compatible.
+- matplotlib 3.11.2: Matplotlib licence (PSF-based, listed as "Python Software Foundation License"). Permissive, compatible.
+- scipy 1.18.1: BSD-3-Clause (the package lists "BSD License"; its licence file also covers bundled parts, which were not reviewed one by one). Permissive, compatible.
+- cryptography 50.0.2: Apache-2.0 OR BSD-3-Clause (dual licence, either may be chosen). Permissive, compatible.
+
+Their transitive runtime dependencies (from uv.lock) were checked the same way: all are MIT, MIT-0, MIT-CMU, BSD,
+ISC, PSF-2.0 or Apache-2.0 licensed. None is copyleft.
+
+Development tools (pytest, hypothesis) are not part of the runtime and are not listed here.

@@ -1,0 +1,18 @@
+id: futures-back-adjusted
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - future
+  - futures
+text: Is the continuous futures series back-adjusted at the rolls?
+why_it_matters: An unadjusted series contains artificial jumps at every roll that look like returns.
+answer_type: choice
+choices:
+- id: back_adjusted
+  label: Yes, back-adjusted
+- id: unadjusted
+  label: No, the raw rolls are stitched together
+  risk: roll-gaps
+critical: true
+unknown_risk: Roll gaps may appear as returns.

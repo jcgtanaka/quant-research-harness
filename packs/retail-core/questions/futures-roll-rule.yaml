@@ -1,0 +1,25 @@
+id: futures-roll-rule
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - future
+  - futures
+text: What rule decides when the series rolls from one contract to the next?
+why_it_matters: A roll date picked with hindsight (for example the highest volume day known only afterwards) leaks
+  the future.
+answer_type: choice
+choices:
+- id: fixed_calendar
+  label: A fixed calendar rule known in advance
+- id: volume_open_interest_trailing
+  label: A trailing volume or open interest rule, known at the time
+- id: hindsight
+  label: Chosen with hindsight, such as the contract that ended up most active
+  risk: lookahead
+- id: expiry
+  label: Held to expiry, then switched
+- id: undocumented
+  label: The vendor does not document it
+critical: true
+unknown_risk: The roll rule is unverified; a roll chosen with hindsight is a possible look-ahead.

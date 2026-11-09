@@ -1,0 +1,23 @@
+id: fx-swap-carry-source
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - fx
+  - fx_spot
+text: Where do the swap or carry rates in this backtest come from?
+why_it_matters: Using today's rates for all of history, or ignoring carry, changes holding returns materially.
+answer_type: choice
+choices:
+- id: historical_broker
+  label: Historical rates from the broker
+- id: derived_from_rates
+  label: Derived from historical interest rates
+- id: constant
+  label: A constant assumed rate
+- id: current_applied
+  label: Current rates applied to all of history
+- id: not_modeled
+  label: Carry is not modeled
+critical: false
+unknown_risk: The carry source is unverified; holding costs may be wrong.

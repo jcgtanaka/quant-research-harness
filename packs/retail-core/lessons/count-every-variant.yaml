@@ -1,0 +1,8 @@
+id: count-every-variant
+statement: Count every model, prompt and feature variant as a trial in the family count, including variants
+  tried by hand or outside the harness. Hidden variants make the overfitting statistics too kind.
+applies_to: {}
+trigger:
+  keywords: []
+action: warn
+severity: warning

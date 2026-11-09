@@ -1,0 +1,25 @@
+id: option-dividend-yield-source
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: Where did the dividend yields used for these option prices and Greeks come from?
+why_it_matters: A yield that was not known at the time, or applied from today to all of history, leaks the future
+  into the model values.
+answer_type: choice
+choices:
+- id: pit_series
+  label: A point-in-time series published at the time
+- id: constant
+  label: A single constant yield
+- id: current_applied
+  label: The current yield applied to all of history
+  risk: lookahead
+- id: vendor
+  label: Vendor-supplied series
+- id: none_assumed
+  label: Assumed to be zero
+critical: true
+unknown_risk: The yield input may contain information from after the bar it prices (possible look-ahead).

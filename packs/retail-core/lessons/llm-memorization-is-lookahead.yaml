@@ -1,0 +1,10 @@
+id: llm-memorization-is-lookahead
+statement: A language model trained on data up to a date D already knows what happened before D. That is look-ahead
+  that no truncation test can catch, because it lives in the model weights. Evaluate only on windows that start after
+  the model's training cutoff plus a safety margin, and treat the documented cutoff as a claim, not a measurement.
+applies_to:
+  uses_llm: true
+trigger:
+  keywords: []
+action: warn
+severity: critical

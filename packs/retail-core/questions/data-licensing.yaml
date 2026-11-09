@@ -1,0 +1,19 @@
+id: data-licensing
+stage: S1
+scope: dataset
+applies_to: {}
+text: May this raw data be shared or published?
+why_it_matters: Vendor licences often forbid redistribution; sharing raw data in a repository or report may breach
+  them.
+answer_type: choice
+choices:
+- id: open_license
+  label: Yes, an open licence allows sharing
+- id: vendor_permitted
+  label: Yes, the vendor licence permits it
+- id: private_only
+  label: No, for my own use only
+- id: unknown_license
+  label: I do not know
+critical: false
+unknown_risk: The licence is unverified; the data must be treated as not shareable.

@@ -1,0 +1,139 @@
+Bench bench-706b7baa279b   profile full   seed 20240601
+Receipt hash: 706b7baa279b8ae58ab9ce92a16f92d55d80eafd4bfc366d1d551571aab6e034
+Harness code hash: de45a004f42327e7e60a47c994a75acef54c61331826b8b66078e7eea6fb57ee
+Methods used:
+  metrics.periods_per_year=observed_density@1
+  s1.quality.gaps=gaps@1
+  s1.quality.null_rate_drift=null_rate_drift@1
+  s1.quality.range=range@1
+  s1.quality.relationship=relationship@1
+  s1.quality.schema=schema@1
+  s1.quality.timezone=timezone@1
+  s2.lookahead_lint=ast_rules@1
+  s2.sanity=bounds@1
+  s2.truncation=prefix_truncation@1
+  s4.walkforward=purged_embargo@1  EXPERIMENTAL: not the default version
+  s5.dsr=bailey_lopezdeprado2014@1
+  s5.pbo=cscv@1
+  s6.bootstrap=stationary_politis_romano1994@1
+Compared with the defaults: s4.walkforward=rolling_anchored@1
+
+== Planted bugs (S1 and S2 detectors) ==
+[default] replications per variant: 30
+  lookahead_shift              detected     150/150 100.0% [97.6%, 100.0%]
+  centered_rolling             detected     90/90 100.0% [96.0%, 100.0%]
+  backward_fill                detected     83/90 92.2% [84.6%, 96.8%]
+  full_sample_normalization    detected     58/60 96.7% [88.5%, 99.6%]
+  same_bar_execution           detected     0/270 0.0% [0.0%, 1.4%]
+  percent_units                detected     120/180 66.7% [59.3%, 73.5%]
+  relationship_corruption      detected     180/180 100.0% [98.0%, 100.0%]
+  relationship_corruption      expected undetectable (flagged anyway) 0/90 0.0% [0.0%, 4.0%]
+  gaps_duplicates              detected     150/150 100.0% [97.6%, 100.0%]
+  controls                     false alarm  0/210 0.0% [0.0%, 1.7%]
+  by detector (flags over all variants and replications):
+    lookahead_shift             lint_block=90  lint_warn=0  truncation=150  sanity=0  quality=0  pnl=0
+    centered_rolling            lint_block=60  lint_warn=0  truncation=90  sanity=0  quality=0  pnl=0
+    backward_fill               lint_block=60  lint_warn=0  truncation=69  sanity=0  quality=0  pnl=0
+    full_sample_normalization   lint_block=0  lint_warn=60  truncation=58  sanity=0  quality=0  pnl=0
+    same_bar_execution          lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=0  pnl=0
+    percent_units               lint_block=0  lint_warn=0  truncation=0  sanity=120  quality=0  pnl=0
+    relationship_corruption     lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=180  pnl=0
+    gaps_duplicates             lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=150  pnl=0
+    controls                    lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=0  pnl=0
+[candidate] replications per variant: 30
+  lookahead_shift              detected     150/150 100.0% [97.6%, 100.0%]
+  centered_rolling             detected     90/90 100.0% [96.0%, 100.0%]
+  backward_fill                detected     83/90 92.2% [84.6%, 96.8%]
+  full_sample_normalization    detected     58/60 96.7% [88.5%, 99.6%]
+  same_bar_execution           detected     0/270 0.0% [0.0%, 1.4%]
+  percent_units                detected     120/180 66.7% [59.3%, 73.5%]
+  relationship_corruption      detected     180/180 100.0% [98.0%, 100.0%]
+  relationship_corruption      expected undetectable (flagged anyway) 0/90 0.0% [0.0%, 4.0%]
+  gaps_duplicates              detected     150/150 100.0% [97.6%, 100.0%]
+  controls                     false alarm  0/210 0.0% [0.0%, 1.7%]
+  by detector (flags over all variants and replications):
+    lookahead_shift             lint_block=90  lint_warn=0  truncation=150  sanity=0  quality=0  pnl=0
+    centered_rolling            lint_block=60  lint_warn=0  truncation=90  sanity=0  quality=0  pnl=0
+    backward_fill               lint_block=60  lint_warn=0  truncation=69  sanity=0  quality=0  pnl=0
+    full_sample_normalization   lint_block=0  lint_warn=60  truncation=58  sanity=0  quality=0  pnl=0
+    same_bar_execution          lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=0  pnl=0
+    percent_units               lint_block=0  lint_warn=0  truncation=0  sanity=120  quality=0  pnl=0
+    relationship_corruption     lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=180  pnl=0
+    gaps_duplicates             lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=150  pnl=0
+    controls                    lint_block=0  lint_warn=0  truncation=0  sanity=0  quality=0  pnl=0
+
+== Noise false positives (S3-S5) ==
+[default] nominal level (1 - min_dsr): 0.050; pass = S4 and S5 gates
+  g12_t500       false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g12_t1000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g12_t2000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t500       false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t1000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t2000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t500      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t1000     false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t2000     false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  pooled fpr      0/1350 0.0% [0.0%, 0.3%]
+  pooled pass_s4  638/1350 47.3% [44.6%, 50.0%]
+  pooled pass_pbo 132/1350 9.8% [8.2%, 11.5%]
+  pooled pass_dsr 7/1350 0.5% [0.2%, 1.1%]
+  pooled pass_s5  0/1350 0.0% [0.0%, 0.3%]
+[candidate] nominal level (1 - min_dsr): 0.050; pass = S4 and S5 gates
+  g12_t500       false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g12_t1000      false positives 1/150 0.7% [0.0%, 3.7%]  errors 0
+  g12_t2000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t500       false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t1000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g36_t2000      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t500      false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t1000     false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  g120_t2000     false positives 0/150 0.0% [0.0%, 2.4%]  errors 0
+  pooled fpr      1/1350 0.1% [0.0%, 0.4%]
+  pooled pass_s4  644/1350 47.7% [45.0%, 50.4%]
+  pooled pass_pbo 132/1350 9.8% [8.2%, 11.5%]
+  pooled pass_dsr 8/1350 0.6% [0.3%, 1.2%]
+  pooled pass_s5  1/1350 0.1% [0.0%, 0.4%]
+
+== Known-edge power (S3-S5) ==
+[default] power by planted trend strength (latent drift standard deviation per bar)
+  s0.002   power 8/200 4.0% [1.7%, 7.7%]  errors 0
+  s0.003   power 30/200 15.0% [10.4%, 20.7%]  errors 0
+  s0.004   power 86/200 43.0% [36.0%, 50.2%]  errors 0
+  s0.006   power 160/200 80.0% [73.8%, 85.3%]  errors 0
+  s0.008   power 186/200 93.0% [88.5%, 96.1%]  errors 0
+[candidate] power by planted trend strength (latent drift standard deviation per bar)
+  s0.002   power 6/200 3.0% [1.1%, 6.4%]  errors 0
+  s0.003   power 32/200 16.0% [11.2%, 21.8%]  errors 0
+  s0.004   power 87/200 43.5% [36.5%, 50.7%]  errors 0
+  s0.006   power 158/200 79.0% [72.7%, 84.4%]  errors 0
+  s0.008   power 186/200 93.0% [88.5%, 96.1%]  errors 0
+
+== Default vs candidate (gated metrics) ==
+default (a) vs candidate (b); alpha 0.05; delta = b - a
+  method s4.walkforward: rolling_anchored@1 -> purged_embargo@1
+  note: both arms ran over identical generated data; Fisher's test treats them as independent samples, which is conservative
+  power/s0.002                                   a 8/200  b 6/200  delta -1.0 pts  p=0.787  not distinguishable  (a better)
+  power/s0.003                                   a 30/200  b 32/200  delta +1.0 pts  p=0.89  not distinguishable  (b better)
+  power/s0.004                                   a 86/200  b 87/200  delta +0.5 pts  p=1  not distinguishable  (b better)
+  power/s0.006                                   a 160/200  b 158/200  delta -1.0 pts  p=0.901  not distinguishable  (a better)
+  power/s0.008                                   a 186/200  b 186/200  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g120_t1000                                 a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g120_t2000                                 a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g120_t500                                  a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g12_t1000                                  a 0/150  b 1/150  delta +0.7 pts  p=1  not distinguishable  (a better)
+  fpr/g12_t2000                                  a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g12_t500                                   a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g36_t1000                                  a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g36_t2000                                  a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  fpr/g36_t500                                   a 0/150  b 0/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/backward_fill                           a 83/90  b 83/90  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/centered_rolling                        a 90/90  b 90/90  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/full_sample_normalization               a 58/60  b 58/60  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/gaps_duplicates                         a 150/150  b 150/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/lookahead_shift                         a 150/150  b 150/150  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/percent_units                           a 120/180  b 120/180  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/relationship_corruption                 a 180/180  b 180/180  delta +0.0 pts  p=1  not distinguishable  (tie)
+  detect/same_bar_execution                      a 0/270  b 0/270  delta +0.0 pts  p=1  not distinguishable  (tie)
+  false_alarm/controls                           a 0/210  b 0/210  delta +0.0 pts  p=1  not distinguishable  (tie)
+
+Synthetic data and research use only; not investment advice.

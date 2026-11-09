@@ -1,0 +1,14 @@
+rules:
+  - type: schema
+    columns: {close: f}
+  - type: range
+    column: close
+    positive: true
+  - type: gaps
+    freq: D
+  - type: timezone
+    zone: UTC
+  - type: null_rate_drift
+    column: close
+    window_fraction: 0.2
+    max_increase: 0.05

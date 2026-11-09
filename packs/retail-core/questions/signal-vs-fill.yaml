@@ -1,0 +1,15 @@
+id: signal-vs-fill
+stage: S2
+scope: strategy
+applies_to: {}
+text: When is the signal computed, and when does the order fill?
+why_it_matters: A fill at the same price that produced the signal assumes a trade nobody could have made.
+answer_type: choice
+choices:
+- id: next_bar
+  label: Signal at one bar, fill at a later bar
+- id: same_bar_price
+  label: Fill at the same bar price that produced the signal
+  risk: execution-lookahead
+critical: true
+unknown_risk: Execution timing is unverified; fills may be optimistic.

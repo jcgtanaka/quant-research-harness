@@ -1,0 +1,15 @@
+id: check-mark-staleness
+statement: For multi-leg positions, check that every leg is marked at a fresh time. One stale leg creates
+  a phantom profit or loss in the combined position.
+applies_to: {}
+trigger:
+  keywords:
+  - multi-leg
+  - leg
+  - legs
+  - option
+  - options
+  - condor
+  - spread
+action: warn
+severity: warning

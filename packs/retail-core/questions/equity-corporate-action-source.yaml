@@ -1,0 +1,25 @@
+id: equity-corporate-action-source
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - equity
+  - equities
+  - etf
+text: Which source supplied the corporate actions (splits, dividends, mergers) used in the data?
+why_it_matters: A different or later source can change factors and dates, and the history may have been corrected
+  after the fact.
+answer_type: choice
+choices:
+- id: exchange_official
+  label: Exchange or issuer announcements
+- id: vendor
+  label: Vendor-supplied calendar
+- id: derived_from_prices
+  label: Inferred by me from price jumps
+- id: none_applied
+  label: No corporate actions applied
+- id: unknown_source
+  label: I do not know
+critical: false
+unknown_risk: The corporate-action source is unverified.

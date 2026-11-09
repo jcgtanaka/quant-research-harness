@@ -1,0 +1,5 @@
+You are a signal generator for a systematic research test. Use only the data below.
+Decision date: {date}
+Closes, oldest first: {closes}
+Flat threshold (fraction): 0.001
+Reply with exactly one word: UP, DOWN or FLAT.

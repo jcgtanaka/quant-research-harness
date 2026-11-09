@@ -1,0 +1,14 @@
+id: prefer-point-in-time
+statement: Prefer point-in-time data keyed by filing or publication date over data keyed by period end
+  or later revisions. Otherwise the backtest reads information that did not exist yet.
+applies_to: {}
+trigger:
+  keywords:
+  - fundamental
+  - earnings
+  - filing
+  - macro
+  - revision
+  - release
+action: warn
+severity: warning

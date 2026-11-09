@@ -1,0 +1,21 @@
+id: fundamentals-keying
+stage: S1
+scope: dataset
+applies_to:
+  strategy_family:
+  - fundamental
+  - value
+  - quality
+  - factor
+  - earnings
+text: Is the fundamental data keyed by filing date or by period end?
+why_it_matters: Period-end keys make a number available months before anyone could have read it.
+answer_type: choice
+choices:
+- id: filing_date
+  label: Filing or publication date
+- id: period_end
+  label: Period end
+  risk: lookahead
+critical: true
+unknown_risk: Availability dates of the fundamentals are unverified (possible look-ahead).

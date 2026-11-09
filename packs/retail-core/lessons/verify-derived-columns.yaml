@@ -1,0 +1,14 @@
+id: verify-derived-columns
+statement: Verify every derived column against its reference instrument or source before using it. Derived
+  values inherit the errors of their inputs and hide unit and sign mistakes.
+applies_to: {}
+trigger:
+  keywords:
+  - derived
+  - implied
+  - basis
+  - curve
+  - column
+  - spread
+action: warn
+severity: warning

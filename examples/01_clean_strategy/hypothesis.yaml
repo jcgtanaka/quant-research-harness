@@ -1,0 +1,26 @@
+# Synthetic example: a trend strategy with correct timing. Expected: S1 PASS, S2 PASS.
+text: A fast/slow moving-average spread carries information about the next bar on a synthetic series.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 9
+thresholds:
+  min_deflated_score: 0.5
+  max_drawdown: 0.25
+difference_statement: Baseline trend rule; nothing earlier to differ from.
+adapter: "adapter:TrendAdapter"
+datasets: [prices]
+windows:
+  development: ["2020-03-01", "2023-12-31"]
+walk_forward: {train: 400, test: 100}
+bounds:
+  max_abs_period_return: 0.5
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0
+# The independent P&L reconstruction (experimental) recomputes returns from the reported positions with this
+# execution lag and compares them with what the adapter reported (see docs/methods.md).
+execution:
+  lag_bars: 1
+  price_column: close
+methods:
+  s2.pnl_reconstruction: pnl_reconstruction@1

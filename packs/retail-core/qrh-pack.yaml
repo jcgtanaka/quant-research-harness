@@ -1,0 +1,10 @@
+name: retail-core
+version: 1.0.0
+schema_version: 1
+visibility: public
+description: Generic lessons and interview questions for research on a small trading account. No data,
+  no numbers tied to any real account.
+applies_to: {}
+authors:
+- quant-research-harness contributors
+license: Apache-2.0

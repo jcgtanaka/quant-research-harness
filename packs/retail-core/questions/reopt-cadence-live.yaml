@@ -1,0 +1,20 @@
+id: reopt-cadence-live
+stage: S4
+scope: strategy
+applies_to: {}
+text: How often will the live system re-optimize compared with the tested walk-forward?
+why_it_matters: A cadence that differs from the test makes the tested result unrepresentative.
+answer_type: choice
+choices:
+- id: same
+  label: The same cadence as tested
+- id: fixed
+  label: Never, parameters stay fixed
+- id: slower
+  label: Slower than tested
+  risk: cadence-mismatch
+- id: faster
+  label: Faster than tested
+  risk: cadence-mismatch
+critical: true
+unknown_risk: The live re-optimization cadence is unverified.

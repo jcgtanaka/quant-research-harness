@@ -1,0 +1,14 @@
+id: match-reoptimization-cadence
+statement: The re-optimization cadence tested must equal the cadence used live. A faster tested cadence
+  overstates what a slower live process can do.
+applies_to: {}
+trigger:
+  keywords:
+  - walk-forward
+  - reoptimize
+  - re-optimize
+  - refit
+  - retrain
+  - rolling
+action: warn
+severity: warning

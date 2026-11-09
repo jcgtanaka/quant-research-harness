@@ -1,0 +1,15 @@
+id: daily-bar-sample-size
+statement: Daily bars limit what a fitted model can learn. Count the independent observations and keep
+  model capacity well below that count.
+applies_to: {}
+trigger:
+  keywords:
+  - model
+  - machine learning
+  - classifier
+  - regression
+  - neural
+  - tree
+  - fit
+action: warn
+severity: warning

@@ -1,0 +1,24 @@
+id: futures-settlement-vs-last
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - future
+  - futures
+text: Do the prices hold the settlement price or the last traded price?
+why_it_matters: A settlement price is computed after the close; trading on it at the close assumes a fill that was
+  not available.
+answer_type: choice
+choices:
+- id: last_trade
+  label: Last traded price of the bar
+- id: settlement
+  label: Official settlement price
+  risk: lookahead
+- id: mixed
+  label: Settlement for some dates and last trade for others
+  risk: lookahead
+- id: unknown_source
+  label: The vendor does not say
+critical: true
+unknown_risk: Whether the price was known at the bar close is unverified (possible look-ahead).

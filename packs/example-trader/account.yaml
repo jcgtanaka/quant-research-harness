@@ -1,0 +1,16 @@
+capital: 25000
+base_currency: USD
+min_order_size:
+  synthetic: 1
+  equity: 1
+fee_schedule:
+  synthetic:
+    per_order: 1.0
+  equity:
+    per_share: 0.005
+margin_rules:
+  synthetic:
+    initial: 1.0
+caps:
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0

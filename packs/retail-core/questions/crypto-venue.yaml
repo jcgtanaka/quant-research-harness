@@ -1,0 +1,22 @@
+id: crypto-venue
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - crypto
+  - crypto_spot
+  - crypto_perp
+text: Which venue produced this data?
+why_it_matters: Prices, liquidity and fees differ by venue; a backtest on one venue does not transfer to another.
+answer_type: choice
+choices:
+- id: single_exchange
+  label: One exchange
+- id: aggregate
+  label: A volume-weighted aggregate across venues
+- id: index_provider
+  label: An index provider
+- id: unknown_venue
+  label: I do not know
+critical: false
+unknown_risk: The venue is unverified.

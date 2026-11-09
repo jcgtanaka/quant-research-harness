@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Research dashboard (read-only)</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="page-header">
+  <div class="header-text">
+    <h1>Research dashboard</h1>
+    <p class="muted">See the results the harness has recorded. This page only reads; it never changes anything.</p>
+  </div>
+  <div class="header-actions">
+    <span id="updated-at" class="muted" aria-live="polite"></span>
+    <button type="button" id="refresh" class="refresh-button">Refresh</button>
+    <a class="header-action" href="#/start">Start here</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sidebar tabs" aria-label="Sections">
+    <a href="#/start" id="tab-start">Start here</a>
+    <a href="#/" id="tab-trials">Trials</a>
+    <a href="#/bench" id="tab-bench">Bench</a>
+    <a href="#/warnings" id="tab-warnings">Warnings</a>
+    <a href="#/checks" id="tab-checks">Checks</a>
+    <div class="theme-picker">
+      <label for="theme-select">Colour theme</label>
+      <select id="theme-select">
+        <option value="auto">Match my device</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </nav>
+  <main id="app" aria-live="polite">
+    <p class="muted">Loading...</p>
+  </main>
+</div>
+<noscript><p class="error">This page needs JavaScript to show the trial list.</p></noscript>
+<script src="/static/app.js"></script>
+</body>
+</html>

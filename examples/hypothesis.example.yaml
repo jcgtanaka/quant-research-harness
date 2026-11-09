@@ -1,0 +1,16 @@
+# Generic, synthetic example hypothesis. Register it with: qrh new examples/hypothesis.example.yaml
+text: Returns on the synthetic series show persistence over a medium horizon.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 12
+thresholds:
+  min_deflated_score: 0.5
+  max_drawdown: 0.25
+difference_statement: >-
+  Differs from the previous trial by using a longer lookback window and a
+  volatility-scaled position size.
+# family_id: optional; defaults to strategy_family|asset_class|frequency
+# methods: optional pins of method versions, recorded at S0 and frozen with the hypothesis (see docs/methods.md).
+# Unpinned methods use the default of the day. A version that is not the default is flagged in receipts and reports.
+# methods: {s5.pbo: cscv@1}

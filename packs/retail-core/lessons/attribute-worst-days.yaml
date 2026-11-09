@@ -1,0 +1,15 @@
+id: attribute-worst-days
+statement: Before tuning a structure, attribute the losses of the worst days to the position that was
+  actually open on those days. Tuning the wrong leg fixes nothing.
+applies_to: {}
+trigger:
+  keywords:
+  - structure
+  - spread
+  - condor
+  - hedge
+  - tune
+  - tuning
+  - overlay
+action: warn
+severity: warning

@@ -1,0 +1,38 @@
+Bench bench-047471e36bf0   profile full   seed 20240601
+Receipt hash: 047471e36bf065f0c5947b94749cfb9c322885c494ed76ce002f3e37d95b27ee
+Harness code hash: 72abc93cc509302ea989eca1f70e82f1607c800769c7413f8248ffc4d5a52519
+Methods used:
+  llm.replay_cache=replay_cache@1
+  metrics.periods_per_year=observed_density@1
+  s1.quality.gaps=gaps@1
+  s1.quality.null_rate_drift=null_rate_drift@1
+  s1.quality.range=range@1
+  s1.quality.relationship=relationship@1
+  s1.quality.schema=schema@1
+  s1.quality.timezone=timezone@1
+  s2.llm_gate=llm_gate@1
+  s2.lookahead_lint=ast_rules@1
+  s2.sanity=bounds@1
+  s2.truncation=prefix_truncation@1
+  s4.walkforward=rolling_anchored@1
+  s5.dsr=bailey_lopezdeprado2014@1
+  s5.pbo=cscv@1
+  s6.bootstrap=stationary_politis_romano1994@1
+
+== LLM contamination gate (S2: cutoff gate, declaration lint, replay of truncated runs) ==
+[results] replications per variant: 30
+  llm_cutoff_violation         detected     270/270 100.0% [98.6%, 100.0%]
+  llm_cutoff_unknown           detected     150/150 100.0% [97.6%, 100.0%]
+  llm_undeclared               detected     390/390 100.0% [99.1%, 100.0%]
+  llm_prompt_lookahead         detected     210/210 100.0% [98.3%, 100.0%]
+  llm_direct_client            detected     60/60 100.0% [94.0%, 100.0%]
+  controls                     false alarm  0/270 0.0% [0.0%, 1.4%]
+  by detector (flags over all variants and replications):
+    llm_cutoff_violation        gate=270  lint=0  direct=0  replay=0  truncation=0
+    llm_cutoff_unknown          gate=150  lint=0  direct=0  replay=0  truncation=0
+    llm_undeclared              gate=0  lint=390  direct=0  replay=0  truncation=0
+    llm_prompt_lookahead        gate=0  lint=30  direct=0  replay=210  truncation=210
+    llm_direct_client           gate=0  lint=0  direct=60  replay=0  truncation=0
+    controls                    gate=0  lint=0  direct=0  replay=0  truncation=0
+
+Synthetic data and research use only; not investment advice.

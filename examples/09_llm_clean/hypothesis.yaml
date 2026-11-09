@@ -1,0 +1,36 @@
+# Synthetic example: a language-model trend strategy with a declared model whose cutoff is before the data.
+# Expected: S0-S7 PASS. Record the model's answers once, then every run replays them:
+#   qrh run <trial> --llm-mode record      (the stub backend needs no network)
+#   qrh run <trial>                        (replay: identical receipt hashes)
+text: A language model asked for the direction of the next bar from recent closes follows the trend on a synthetic series.
+strategy_family: llm-trend
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 9
+thresholds:
+  min_deflated_score: 0.5
+  max_drawdown: 0.25
+difference_statement: First language-model trend rule; nothing earlier to differ from.
+adapter: "adapter:LLMTrendAdapter"
+datasets: [prices]
+windows:
+  development: ["2020-03-01", "2023-12-31"]
+walk_forward: {train: 400, test: 100}
+bounds:
+  max_abs_period_return: 0.5
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0
+execution:
+  lag_bars: 1
+  price_column: close
+methods:
+  s2.pnl_reconstruction: pnl_reconstruction@1
+llm:
+  models:
+    - id: stub-model-1
+      provider: stub
+      training_cutoff: "2019-06-30"      # before the data starts; the gate adds a 180-day margin
+      cutoff_source: provider_documented
+  prompt_files: [prompts/trend.txt]
+  params: {temperature: 0}
+  live_retrieval: false

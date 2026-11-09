@@ -1,0 +1,23 @@
+id: equity-survivorship-free-universe
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - equity
+  - equities
+  - etf
+text: Does the universe include every name that was tradable at each date, or only names alive today?
+why_it_matters: A universe of today's survivors drops the failures and inflates every backtest on it.
+answer_type: choice
+choices:
+- id: point_in_time_universe
+  label: Point-in-time universe for each date
+- id: current_constituents
+  label: Constituents as of today applied to history
+  risk: survivorship
+- id: single_name
+  label: One name chosen by me, no universe
+- id: unknown_universe
+  label: I do not know how the universe was built
+critical: true
+unknown_risk: Survivorship in the equity universe is unverified.

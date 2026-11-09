@@ -1,0 +1,21 @@
+id: expired-contracts
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+  - future
+  - futures
+text: Does the data include contracts that have already expired?
+why_it_matters: 'A history of only live contracts is survivor-biased: failures and expired contracts are
+  missing.'
+answer_type: choice
+choices:
+- id: included
+  label: Yes, expired contracts are included
+- id: live_only
+  label: No, only contracts alive today
+  risk: survivorship
+critical: true
+unknown_risk: Survivorship in the contract universe is unverified.

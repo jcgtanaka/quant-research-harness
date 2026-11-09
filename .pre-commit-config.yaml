@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: private-denylist
+        name: private-denylist
+        entry: python scripts/denylist_check.py
+        language: system
+        pass_filenames: true

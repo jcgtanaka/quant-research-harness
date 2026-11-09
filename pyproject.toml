@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quant-research-harness"
+version = "0.0.1"
+description = "Deterministic research harness for backtesting: AI orchestrates, deterministic checks decide."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [{ name = "Jose Carlos Gonzales Tanaka", email = "jcgtanaka@outlook.com" }]
+keywords = ["backtesting", "quant", "trading", "research", "overfitting", "claude-code", "hooks"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "typer",
+    "pydantic>=2",
+    "pyyaml>=6.0.3",
+    "pyarrow>=26.0.0",
+    "matplotlib>=3.11.2",
+    "scipy>=1.17.1",
+    "cryptography>=50.0.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/jcgtanaka/quant-research-harness"
+Issues = "https://github.com/jcgtanaka/quant-research-harness/issues"
+
+[project.scripts]
+qrh = "qrh.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "hypothesis",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/qrh"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+# Existing code fails these; not yet cleaned up. Re-enable once fixed.
+ignore = [
+    "E501",  # line-too-long (663 hits)
+    "E741",  # ambiguous-variable-name (10)
+    "F401",  # unused-import (38)
+    "F841",  # unused-variable (3)
+    "F541",  # f-string-missing-placeholders (2)
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]

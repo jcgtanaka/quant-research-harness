@@ -1,0 +1,18 @@
+id: llm-live-retrieval
+stage: S2
+scope: hypothesis
+applies_to:
+  uses_llm: true
+text: Does the system use live retrieval or tools (search, web, APIs) that return current data rather than data as of each decision time?
+why_it_matters: A tool that returns today's data inside a backtest hands the model the future, whatever its training cutoff is.
+answer_type: choice
+choices:
+- id: "no"
+  label: No retrieval or tools
+- id: yes_point_in_time
+  label: Yes, and what a tool returns is limited to what existed at each decision time
+- id: yes_current
+  label: Yes, and a tool can return current data
+  risk: lookahead
+critical: true
+unknown_risk: Retrieval may return data from after each decision time.

@@ -1,0 +1,19 @@
+id: data-timezone
+stage: S1
+scope: dataset
+applies_to: {}
+text: Which time zone are the timestamps in this data expressed in?
+why_it_matters: A time zone mistaken for another shifts every row by hours and can place a value before it was known.
+answer_type: choice
+choices:
+- id: utc
+  label: UTC
+- id: exchange_local
+  label: The exchange local time
+- id: my_local
+  label: My local time
+- id: naive_unknown
+  label: Timestamps carry no time zone and I do not know
+  risk: lookahead
+critical: true
+unknown_risk: The time zone is unverified; a shift can create a look-ahead.

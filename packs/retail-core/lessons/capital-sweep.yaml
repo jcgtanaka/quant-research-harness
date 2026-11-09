@@ -1,0 +1,8 @@
+id: capital-sweep
+statement: Run the same strategy across a range of account sizes. Minimum order sizes, fees and fills
+  change the result as capital changes, and a result that holds at one size may not at another.
+applies_to: {}
+trigger:
+  keywords: []
+action: warn
+severity: info

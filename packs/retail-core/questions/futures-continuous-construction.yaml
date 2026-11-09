@@ -1,0 +1,24 @@
+id: futures-continuous-construction
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - future
+  - futures
+text: How was the continuous futures series constructed?
+why_it_matters: The stitching method decides whether returns, levels and percentage changes mean what the backtest
+  assumes.
+answer_type: choice
+choices:
+- id: difference_adjusted
+  label: Spliced with additive (difference) adjustment
+- id: ratio_adjusted
+  label: Spliced with ratio adjustment
+- id: spliced_raw
+  label: Spliced raw, no adjustment
+- id: single_contract
+  label: One contract at a time, not stitched
+- id: undocumented
+  label: The vendor does not document it
+critical: false
+unknown_risk: The splice method is unverified, so levels and percentage returns may be distorted.

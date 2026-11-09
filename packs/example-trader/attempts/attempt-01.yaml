@@ -1,0 +1,8 @@
+text: A synthetic moving-average crossover with several lookback pairs.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+variants_tried: 3
+verdict: FAIL
+date: ''
+notes: Synthetic entry for demonstration.

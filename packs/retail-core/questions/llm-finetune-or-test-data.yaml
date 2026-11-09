@@ -1,0 +1,22 @@
+id: llm-finetune-or-test-data
+stage: S2
+scope: hypothesis
+applies_to:
+  uses_llm: true
+text: Was the model fine-tuned, or prompted with market data from the test period, outside this harness?
+why_it_matters: Fine-tuning or prompting on the test period teaches the model the outcome, and the declared training cutoff no longer describes what it knows.
+answer_type: choice
+choices:
+- id: "no"
+  label: Neither
+- id: fine_tuned
+  label: Fine-tuned on data that includes the test period
+  risk: lookahead
+- id: prompted_with_test_period
+  label: Prompted with market data from the test period
+  risk: lookahead
+- id: both
+  label: Both
+  risk: lookahead
+critical: true
+unknown_risk: The model may have seen the test period through fine-tuning or earlier prompts.

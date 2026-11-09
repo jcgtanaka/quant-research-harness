@@ -1,0 +1,24 @@
+id: fx-rollover-cutoff-timezone
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - fx
+  - fx_spot
+text: Which time zone and cut-off define the end of the trading day in this data?
+why_it_matters: A daily bar that closes at an unstated cut-off can include hours that fall after the decision time.
+answer_type: choice
+choices:
+- id: fixed_new_york_close
+  label: A fixed market-convention cut-off, stated
+- id: utc_midnight
+  label: Midnight UTC
+- id: local_midnight
+  label: Midnight in the exchange or my local time zone
+- id: shifting_with_daylight_saving
+  label: A cut-off that shifts with daylight saving
+  risk: lookahead
+- id: unknown_cutoff
+  label: I do not know
+critical: true
+unknown_risk: The daily cut-off is unverified; bars may include data after the decision time (possible look-ahead).

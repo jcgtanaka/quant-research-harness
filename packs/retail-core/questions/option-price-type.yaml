@@ -1,0 +1,21 @@
+id: option-price-type
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - option
+  - options
+text: What kind of option price does the price column hold?
+why_it_matters: A last trade can be stale, a settlement is set after the close, and a mid may not be tradable.
+answer_type: choice
+choices:
+- id: mid
+  label: Mid of bid and ask
+- id: last
+  label: Last trade
+- id: settlement
+  label: Settlement or official closing price
+- id: bid_ask_sides
+  label: Separate bid and ask, no single price
+critical: false
+unknown_risk: Which price the backtest fills against is unverified.

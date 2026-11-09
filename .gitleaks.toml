@@ -1,0 +1,4 @@
+title = "quant-research-harness gitleaks config"
+
+[extend]
+useDefault = true

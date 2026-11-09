@@ -1,0 +1,9 @@
+id: falsification-criterion
+stage: S0
+scope: hypothesis
+applies_to: {}
+text: What result would make you drop this hypothesis?
+why_it_matters: A criterion written before the data is seen keeps the test honest.
+answer_type: text
+critical: false
+unknown_risk: No falsification criterion was stated.

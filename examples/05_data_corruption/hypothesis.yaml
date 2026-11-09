@@ -1,0 +1,18 @@
+# Synthetic example: the `derived` column is silently replaced over one period. Expected: S1 BLOCKED.
+text: A rolling-mean deviation on the derived series predicts the next bar.
+strategy_family: trend
+asset_class: synthetic
+frequency: 1D
+parameter_space_size: 2
+thresholds:
+  min_deflated_score: 0.5
+  max_drawdown: 0.25
+difference_statement: Baseline rule on a dataset whose derived column is corrupted over one period.
+adapter: "adapter:DerivedTrendAdapter"
+datasets: [linked]
+windows:
+  development: ["2020-03-01", "2020-12-31"]
+bounds:
+  max_abs_period_return: 0.5
+  max_gross_leverage: 1.0
+  max_position_weight: 1.0

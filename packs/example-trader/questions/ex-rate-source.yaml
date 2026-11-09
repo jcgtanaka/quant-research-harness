@@ -1,0 +1,19 @@
+id: ex-rate-source
+stage: S1
+scope: dataset
+applies_to:
+  asset_class:
+  - synthetic
+text: How was the reference rate series for this synthetic data produced?
+why_it_matters: 'Demo question: a rate series built from the future would leak information.'
+answer_type: choice
+choices:
+- id: pit_daily
+  label: Point-in-time daily published rates
+- id: constant
+  label: A single constant rate
+- id: current_curve
+  label: The current curve applied to all of history
+  risk: lookahead
+critical: true
+unknown_risk: The rate source is unverified (possible look-ahead).

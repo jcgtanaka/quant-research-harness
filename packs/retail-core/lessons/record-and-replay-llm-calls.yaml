@@ -1,0 +1,10 @@
+id: record-and-replay-llm-calls
+statement: Record every language-model call once and replay it. Model answers vary between runs, so a verdict is
+  reproducible only against a recorded cache. Call the model only through the harness entry point, record before you
+  replay, and never edit or invent a cached answer.
+applies_to:
+  uses_llm: true
+trigger:
+  keywords: []
+action: warn
+severity: warning

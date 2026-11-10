@@ -6,6 +6,9 @@ with pass/fail gates and JSON receipts. Any check that cannot run returns
 `BLOCKED`, never `PASS`. Engines plug in through small adapter interfaces, and
 nothing is keyed on a symbol, a strategy name or a fixed bar size.
 
+> **Alpha release.** The core checks work, but end-to-end tests found issues that are not fixed yet. Read
+> [docs/known-limitations.md](docs/known-limitations.md) before you trust a result.
+
 **Status: P0-P2 (P2a data gate and implementation checks, P2b validation stages, P2c visual reports),
 P3 (Claude Code hooks), P3b (AI usage metrics), P3b+ (human approvals, runaway guard, claim check, waste and regression reports)
 P3d-a (versioned method registry and benchmarks with known truth), P3d-b1 (experience packs, interviews,
